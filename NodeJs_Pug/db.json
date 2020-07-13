@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "name": "Lê Hiếu",
+      "age": "18",
+      "id": "8cd72c38-ca41-4129-9899-ad2d3b4d4dc8"
+    },
+    {
+      "name": "Nguyễn Hữu Vinh",
+      "age": "22",
+      "id": "19a782f5-c50a-4cb6-813c-4f2c2ca5f87a",
+      "username": "zinbac000",
+      "password": "e10adc3949ba59abbe56e057f20f883e"
+    },
+    {
+      "name": "asasd",
+      "age": "18",
+      "id": "46d62f0b-586f-46bb-8df9-c5dab5ba1e6c"
+    },
+    {
+      "name": "Vũ",
+      "age": "29",
+      "id": "b16c4856-179d-4275-91a5-3d3885fb56e4"
+    }
+  ]
+}

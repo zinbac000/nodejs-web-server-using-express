@@ -1,0 +1,16 @@
+extends ../shared/layout.pug
+
+block content
+    -
+        let { name, age} = user || {name: '', age: ''};
+    h1.text-center Create User
+    form(action="/users/create", method="POST").w-50.mx-auto
+        each error in errors || []
+            .alert.alert-danger= error
+        .form-group
+            label Name:
+            input(type="text", name="name", placeholder="Input your username...", value=name).form-control
+        .form-group
+            label Age:
+            input(type="text", name="age", placeholder="Input your age...", value=age).form-control
+        input(type="submit", value="Submit").btn.btn-primary
