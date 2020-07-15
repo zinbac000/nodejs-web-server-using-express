@@ -1,4 +1,4 @@
-const users = require("../db");
+const { users } = require("../db");
 
 module.exports.index = (req, res) => {
   res.render("users/index", { users: users.value() });

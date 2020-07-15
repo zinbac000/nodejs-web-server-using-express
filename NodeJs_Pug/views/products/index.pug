@@ -1,0 +1,39 @@
+extends ../shared/layout.pug
+
+block content
+    h1.text-center  Products
+    .container
+        .row
+            each product in products
+                .col-3
+                    .card
+                        img(src=product.image, alt="product").card-img-top
+                        .card-body
+                            h5.card-title= product.name
+                            p.card-text= product.description
+        .row
+            .col-12
+                - let i = startPage;
+                - let isPrevDisabled = activePage < 2;
+                - let isNextDisabled = activePage + 1 > totalPage;
+                - let prevLink = `/products?page=${activePage - 1}`;
+                - let nextLink = `/products?page=${activePage + 1}`;
+                nav(aria-label='...')
+                    ul.pagination
+                        if isPrevDisabled === true
+                            li.page-item.disabled
+                                span.page-link Previous
+                        else
+                            li.page-item
+                                a.page-link(href=prevLink) Previous
+                        while i <= endPage
+                            li.page-item(class= (i === activePage) ? 'active': '')
+                                a.page-link(href='/products?page=' + i)= i
+                            - i++
+                        if isNextDisabled === true
+                            li.page-item.disabled
+                                span.page-link Next
+                        else
+                            li.page-item
+                                a.page-link(href=nextLink) Next               
+                    

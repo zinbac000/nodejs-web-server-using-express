@@ -1,4 +1,4 @@
-const users = require("../db");
+const { users } = require("../db");
 
 module.exports.requireAuth = (req, res, next) => {
   if (!req.signedCookies.userId) {

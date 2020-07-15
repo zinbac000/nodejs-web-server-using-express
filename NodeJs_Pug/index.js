@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const userRouter = require("./routes/users.route");
 const authRouter = require("./routes/auth.route");
+const productRouter = require("./routes/products.route");
 const path = require("path");
 const authMiddleware = require("./middlewares/auth.middleware");
 
@@ -24,6 +25,7 @@ app.get("/", authMiddleware.requireAuth, (req, res) => {
 
 app.use("/auth", authRouter);
 app.use("/users", authMiddleware.requireAuth, userRouter);
+app.use("/products", authMiddleware.requireAuth, productRouter);
 
 app.listen(3000, () => {
   console.log("Server listenting at port 3000");

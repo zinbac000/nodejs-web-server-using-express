@@ -1,4 +1,4 @@
-const users = require("../db");
+const { users } = require("../db");
 const md5 = require("md5");
 
 module.exports.login = (req, res) => {
